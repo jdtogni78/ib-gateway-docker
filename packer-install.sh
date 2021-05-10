@@ -9,7 +9,7 @@ DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends -y tzdata
 
 #apt-get install --no-install-recommends -y xubuntu-core^
 apt-get install --no-install-recommends -y  wget unzip xvfb socat ca-certificates x11vnc
-#libxtst6 libxrender1 libxi6 x11vnc socat 
+#libxtst6 libxrender1 libxi6 x11vnc socat
   #&& apt-get install -y software-properties-common \
 
 # Setup IB TWS

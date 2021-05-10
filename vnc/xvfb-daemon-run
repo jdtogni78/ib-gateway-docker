@@ -7,6 +7,8 @@ if [ "$VNC_PASSWORD" ]; then
   mkdir /.vnc
   x11vnc -storepasswd "$VNC_PASSWORD" /.vnc/passwd > /dev/null
   /etc/init.d/vnc start
+else
+  echo Skip VNC - no password was provided
 fi
 
 $@

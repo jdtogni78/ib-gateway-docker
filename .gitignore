@@ -14,3 +14,5 @@ Logs/*
 node_modules/
 
 *.local
+
+ib/IBController.ini.dtogni

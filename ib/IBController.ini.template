@@ -5,9 +5,9 @@ FIX=no
 
 # IB API Authentication Settings
 # ------------------------------
-#IbLoginId=fdemo
-#IbPassword=demouser
-PasswordEncrypted=no
+#IbLoginId=
+#IbPassword=
+# DEPRECATED PasswordEncrypted=no
 TradingMode=paper
 
 # 3.   TWS Startup Settings

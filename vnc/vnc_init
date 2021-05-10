@@ -1,18 +1,19 @@
 #!/bin/bash -e
 
 VNC=/usr/bin/x11vnc
-VNCARGS="-forever -rfbport 5900 -rfbauth /.vnc/passwd \
-  -o /.vnc/x11vnc.log -display $DISPLAY"
-PIDFILE=/var/vnc.pid
+VNC_ROOT=~/.vnc
+VNC_ARGS="-forever -rfbport 5900 -rfbauth $VNC_ROOT/passwd \
+  -o $VNC_ROOT/x11vnc.log -display $DISPLAY"
+PID_FILE=$VNC_ROOT/pid
 case "$1" in
   start)
     echo -n "Starting x11vnc"
-    /sbin/start-stop-daemon --start --quiet --pidfile $PIDFILE --make-pidfile --background --exec $VNC -- $VNCARGS
+    /sbin/start-stop-daemon --start --pidfile $PID_FILE --make-pidfile --background --exec $VNC -- $VNC_ARGS
     echo "."
     ;;
   stop)
     echo -n "Stopping x11vnc"
-    /sbin/start-stop-daemon --stop --quiet --pidfile $PIDFILE
+    /sbin/start-stop-daemon --stop --quiet --pidfile $PID_FILE
     echo "."
     ;;
   restart)
