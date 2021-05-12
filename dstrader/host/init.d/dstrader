@@ -1,0 +1,24 @@
+#!/bin/bash -e
+
+cd ~jdtogni/dev/ib-gateway-docker/
+
+case "$1" in
+  start)
+    echo -n "Starting DSTrader compose"
+    docker-compose up
+    echo "."
+    ;;
+  stop)
+    echo -n "Stopping DSTrader compose"
+    docker-compose down
+    echo "."
+    ;;
+  restart)
+    $0 stop
+    $0 start
+    ;;
+  *)
+  echo "Usage: /etc/init.d/dstrader {start|stop|restart}"
+  exit 1
+esac
+exit 0

@@ -1,0 +1,28 @@
+# Example of job definition:
+# .---------------- minute (0 - 59)
+# |  .------------- hour (0 - 23)
+# |  |  .---------- day of month (1 - 31)
+# |  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...
+# |  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat
+# |  |  |  |  |
+# *  *  *  *  *  command to be executed
+
+# root crontab to suspend to mem at 1pm til next day at 12:30
+
+# testing setup that runs 4x per day
+ 45  9  *  *  *  /opt/dstrader/wake_up.sh 10 30
+ 45 10  *  *  *  /opt/dstrader/wake_up.sh 11 30
+ 45 11  *  *  *  /opt/dstrader/wake_up.sh 12 30
+ 45 12  *  *  *  /opt/dstrader/wake_up.sh  9 30 # next day
+
+# runs after waking up
+ 32  9  *  *  *  /etc/init.d/dstrader restart
+ 32 10  *  *  *  /etc/init.d/dstrader restart
+ 32 11  *  *  *  /etc/init.d/dstrader restart
+ 32 12  *  *  *  /etc/init.d/dstrader restart
+
+
+# setup to run at end of day
+ 10 13  *  *  *  /opt/dstrader/wake_up.sh  12 30 # next day
+# start and stop, note that tws is supposed to stop by itself by 13h (see ClosedownAt in jts.ini)
+ 30 12  *  *  *  /etc/init.d/dstrader restart

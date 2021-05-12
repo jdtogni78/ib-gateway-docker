@@ -1,0 +1,13 @@
+{
+  "stocks" : [
+    {"symbol": "SPXL",  "type": "STK", "targetShare": 0.20, "deviationTrigger": 0.04},
+    {"symbol": "TECL",  "type": "STK", "targetShare": 0.10, "deviationTrigger": 0.02},
+    {"symbol": "IAU",   "type": "STK", "targetShare": 0.20, "deviationTrigger": 0.02},
+    {"symbol": "FTBFX", "type": "FUND",  "targetShare": 0.25, "deviationTrigger": 0.03}
+  ],
+  "cashTarget":  0.25,
+  "cashReserveTarget": 0.05,
+  "runState" : {
+    "rebalancePeriod": 3
+  }
+}

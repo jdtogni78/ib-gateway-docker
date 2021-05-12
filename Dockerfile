@@ -13,7 +13,7 @@ RUN mkdir -p /tmp/ \
  && wget -q https://github.com/IbcAlpha/IBC/releases/download/3.8.5/IBCLinux-3.8.5.zip
 
 RUN chmod a+x /tmp/ibgateway-stable-standalone-linux-x64.sh \
- && yes n | /tmp/ibgateway-stable-standalone-linux-x64.sh \
+ && yes n | /tmp/ibgateway-stable-standalone-linux-x64.sh
 
 RUN mkdir -p /opt/IBController/ \
  && mkdir -p /opt/IBController/Logs \
