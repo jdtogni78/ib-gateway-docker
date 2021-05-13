@@ -5,12 +5,15 @@ cd ~jdtogni/dev/ib-gateway-docker/
 case "$1" in
   start)
     echo -n "Starting DSTrader compose"
+    dstrader/runtime/decr_files.sh
     docker-compose up
+    dstrader/runtime/clear_files.sh
     echo "."
     ;;
   stop)
     echo -n "Stopping DSTrader compose"
     docker-compose down
+    dstrader/runtime/clear_files.sh
     echo "."
     ;;
   restart)

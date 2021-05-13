@@ -1,0 +1,17 @@
+# Example of job definition:
+# .---------------- minute (0 - 59)
+# |  .------------- hour (0 - 23)
+# |  |  .---------- day of month (1 - 31)
+# |  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...
+# |  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat
+# |  |  |  |  |
+# *  *  *  *  *  command to be executed
+
+# runs after waking up
+ 32  9  *  *  *  /etc/init.d/dstrader restart
+ 32 10  *  *  *  /etc/init.d/dstrader restart
+ 32 11  *  *  *  /etc/init.d/dstrader restart
+ 32 12  *  *  *  /etc/init.d/dstrader restart
+
+# start and stop, note that tws is supposed to stop by itself by 13h (see ClosedownAt in jts.ini)
+ 30 12  *  *  *  /etc/init.d/dstrader restart

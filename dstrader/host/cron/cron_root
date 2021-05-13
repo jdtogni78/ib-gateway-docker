@@ -15,14 +15,5 @@
  45 11  *  *  *  /opt/dstrader/wake_up.sh 12 30
  45 12  *  *  *  /opt/dstrader/wake_up.sh  9 30 # next day
 
-# runs after waking up
- 32  9  *  *  *  /etc/init.d/dstrader restart
- 32 10  *  *  *  /etc/init.d/dstrader restart
- 32 11  *  *  *  /etc/init.d/dstrader restart
- 32 12  *  *  *  /etc/init.d/dstrader restart
-
-
 # setup to run at end of day
  10 13  *  *  *  /opt/dstrader/wake_up.sh  12 30 # next day
-# start and stop, note that tws is supposed to stop by itself by 13h (see ClosedownAt in jts.ini)
- 30 12  *  *  *  /etc/init.d/dstrader restart

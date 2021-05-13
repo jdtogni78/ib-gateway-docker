@@ -1,0 +1,4 @@
+* create a gpg key: gpg --full-gen-key
+* install root cron for wakeing server
+* install user cron for running trader
+* copy dstrader service to init.d
