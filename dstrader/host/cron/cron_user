@@ -7,6 +7,9 @@
 # |  |  |  |  |
 # *  *  *  *  *  command to be executed
 
+# docker non-root needs environment var
+DOCKER_HOST=unix:///run/user/1000/docker.sock
+
 # runs after waking up
  32  9  *  *  *  /etc/init.d/dstrader restart
  32 10  *  *  *  /etc/init.d/dstrader restart
