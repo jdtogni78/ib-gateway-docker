@@ -48,7 +48,9 @@ RUN  chmod 755 /etc/init.d/xvfb
 RUN apt-get install -y procps vim
 
 # adjust to run as non-root
-RUN useradd -ms /bin/bash docker
+ARG uid=1000
+ARG gid=1000
+RUN groupadd -g $gid docker && useradd -ms /bin/bash -u $uid -g $gid docker
 WORKDIR /home/docker
 
 RUN mv /root/Jts . \
