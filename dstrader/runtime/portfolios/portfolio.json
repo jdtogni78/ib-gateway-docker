@@ -9,6 +9,6 @@
   "cashTarget":  0.15,
   "cashReserveTarget": 0.05,
   "runState" : {
-    "rebalancePeriod": 1
+    "rebalancePeriod": 30
   }
 }
