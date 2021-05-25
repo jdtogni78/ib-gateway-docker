@@ -9,7 +9,7 @@ function dstrader_encr() {
     echo "Encrypting ${FILE}"
     rm -f ${FILE}.encr && \
     gpg -o ${FILE}.encr -e -r jdtogni@gmail.com ${FILE} && \
-    rm ${FILE}
+    shred -un 3 ${FILE}
 
     echo "* After encrypting ${FILE}"
     ls ${FILE}*
@@ -36,7 +36,7 @@ function dstrader_decr() {
 function dstrader_clear() {
   FILE=$1
   echo "Clear ${FILE}"
-  rm ${FILE}
+  shred -un 3 ${FILE}
 
   echo "* After clear ${FILE}"
   ls ${FILE}*
@@ -55,12 +55,12 @@ echo NOTE: Always try encrypting first to hide clear text file
 
 case "$1" in
   decrypt)
-    cd "$DIR1" && dstrader_encr mail.properties         && dstrader_decr mail.properties
-    cd "$DIR2" && dstrader_encr IBController.ini.dtogni && dstrader_decr IBController.ini.dtogni
+    cd "$DIR1" ; dstrader_encr mail.properties         ; dstrader_decr mail.properties
+    cd "$DIR2" ; dstrader_encr IBController.ini.dtogni ; dstrader_decr IBController.ini.dtogni
     ;;
   clear)
-    cd "$DIR1" && dstrader_encr mail.properties         && dstrader_clear mail.properties
-    cd "$DIR2" && dstrader_encr IBController.ini.dtogni && dstrader_clear IBController.ini.dtogni
+    cd "$DIR1" ; dstrader_encr mail.properties         ; dstrader_clear mail.properties
+    cd "$DIR2" ; dstrader_encr IBController.ini.dtogni ; dstrader_clear IBController.ini.dtogni
     ;;
   *)
     echo "Usage: encr_files.sh {decrypt|clear}"

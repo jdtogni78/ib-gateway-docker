@@ -46,7 +46,7 @@ AcceptNonBrokerageAccountWarning=yes
 # Saturday where the default locale is Simplified Chinese,
 # use the following:
 # #ClosedownAt=\u661F\u671F\u516D 12:00
-ClosedownAt=
+ClosedownAt=13:00
 IbAutoClosedown=no
 
 AllowBlindTrading=yes

@@ -3,11 +3,11 @@
     {"symbol": "SPXL",  "type": "STK", "targetShare": 0.20, "deviationTrigger": 0.04},
     {"symbol": "SOXL",  "type": "STK", "targetShare": 0.10, "deviationTrigger": 0.02},
     {"symbol": "TECL",  "type": "STK", "targetShare": 0.10, "deviationTrigger": 0.02},
-    {"symbol": "IAU",   "type": "STK", "targetShare": 0.20, "deviationTrigger": 0.02},
-    {"symbol": "FTBFX", "type": "FUND",  "targetShare": 0.25, "deviationTrigger": 0.03}
+    {"symbol": "IAU",   "type": "STK", "targetShare": 0.20, "deviationTrigger": 0.02}
   ],
-  "cashTarget":  0.15,
+  "cashTarget":  0.4,
   "cashReserveTarget": 0.05,
+  "maxSingleOrder" : 0.25,
   "runState" : {
     "rebalancePeriod": 30
   }
