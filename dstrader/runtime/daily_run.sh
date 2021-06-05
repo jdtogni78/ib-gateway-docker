@@ -4,12 +4,12 @@ wait_tws=15
 echo "[DAILY RUN] Wait ${wait_tws} sec"
 sleep ${wait_tws}
 
-cd "$(dirname "$0")"
+cd /home/docker/dstrader/runtime
 
 for portfolio in portfolios/portfolio*.json; do
   [[ -e "${portfolio}" ]] || break
   echo "[DAILY RUN] Launching DSTrader for ${portfolio}..."
-  java -jar DSTrader.jar "${portfolio}"
+  java -Dlog4j.configurationFile=log4j2.xml -jar DSTrader.jar "${portfolio}" "${RUNTIME}"
   sleep 60
 done
 

@@ -10,10 +10,8 @@
 # root crontab to suspend to mem at 1pm til next day at 12:30
 
 # testing setup that runs 4x per day
- 45  9  *  *  *  /opt/dstrader/wake_up.sh 10 30
- 45 10  *  *  *  /opt/dstrader/wake_up.sh 11 30
  45 11  *  *  *  /opt/dstrader/wake_up.sh 12 30
- 45 12  *  *  *  /opt/dstrader/wake_up.sh  9 30 # next day
+ 45 12  *  *  *  /opt/dstrader/wake_up.sh 11 30 # next day
 
 # setup to run at end of day
- 10 13  *  *  *  /opt/dstrader/wake_up.sh  12 30 # next day
+ 10 13  *  *  *  /opt/dstrader/wake_up.sh 11 30 # next day

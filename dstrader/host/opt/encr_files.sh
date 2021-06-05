@@ -44,7 +44,8 @@ function dstrader_clear() {
   echo .
 }
 
-DIR1="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
+
+DIR1=$2
 DIR2="$( cd -- "${DIR1}/../../ib" >/dev/null 2>&1 ; pwd -P )"
 
 echo $DIR1
@@ -55,12 +56,12 @@ echo NOTE: Always try encrypting first to hide clear text file
 
 case "$1" in
   decrypt)
-    cd "$DIR1" ; dstrader_encr mail.properties         ; dstrader_decr mail.properties
-    cd "$DIR2" ; dstrader_encr IBController.ini.dtogni ; dstrader_decr IBController.ini.dtogni
+    cd "$DIR1" ; dstrader_encr mail.properties          ; dstrader_decr mail.properties
+    cd "$DIR2" ; dstrader_encr IBController.ini.jdtogni ; dstrader_decr IBController.ini.jdtogni
     ;;
   clear)
-    cd "$DIR1" ; dstrader_encr mail.properties         ; dstrader_clear mail.properties
-    cd "$DIR2" ; dstrader_encr IBController.ini.dtogni ; dstrader_clear IBController.ini.dtogni
+    cd "$DIR1" ; dstrader_encr mail.properties          ; dstrader_clear mail.properties
+    cd "$DIR2" ; dstrader_encr IBController.ini.jdtogni ; dstrader_clear IBController.ini.jdtogni
     ;;
   *)
     echo "Usage: encr_files.sh {decrypt|clear}"

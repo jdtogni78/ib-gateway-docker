@@ -2,26 +2,32 @@
 
 cd ~jdtogni/dev/ib-gateway-docker/
 
+export RUNTIME=$2
+echo "RUNTIME=$RUNTIME"
+export RUNTIME_PATH=$PWD/dstrader/$2
+export TRADING_MODE=paper
+
 case "$1" in
   start)
     echo -n "Starting DSTrader compose"
-    dstrader/runtime/encr_files.sh decrypt
+    /opt/dstrader/encr_files.sh decrypt "$RUNTIME_PATH"
     docker-compose up
-    dstrader/runtime/encr_files.sh clear
+    /opt/dstrader/encr_files.sh clear "$RUNTIME_PATH"
     echo "."
     ;;
   stop)
     echo -n "Stopping DSTrader compose"
     docker-compose down
-    dstrader/runtime/encr_files.sh clear
+    /opt/dstrader/encr_files.sh clear "$RUNTIME_PATH"
     echo "."
     ;;
   restart)
-    $0 stop
-    $0 start
+    $0 stop "$RUNTIME"
+    $0 start "$RUNTIME"
     ;;
   *)
-  echo "Usage: /etc/init.d/dstrader {start|stop|restart}"
+  echo "Usage: /etc/init.d/dstrader {start|stop|restart} {stage|prod}"
   exit 1
 esac
+
 exit 0

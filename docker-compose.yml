@@ -1,20 +1,17 @@
 version: '2'
 services:
-  tws:
+  dstrader:
     build: .
 #    ports:
 #      - "4003:4003"
 #      - "5901:5900"
     volumes:
-      - ./ib/IBController.ini.dtogni:/home/docker/IBController/IBController.ini
+      - ./ib/IBController.ini.jdtogni:/home/docker/IBController/IBController.ini
       - ./ib/jts.ini:/home/docker/Jts/jts.ini
-      - ./dstrader/runtime/logs:/home/docker/dstrader/logs:rw
-      - ./dstrader/runtime/out:/home/docker/dstrader/out:rw
-      - ./dstrader/runtime/portfolios:/home/docker/dstrader/portfolios:ro
+      - ./dstrader/${RUNTIME}:/home/docker/dstrader/runtime:rw
     environment:
       - TZ=America/Los_Angeles
-      # Variables pulled from /IBController/IBControllerGatewayStart.sh
-      - VNC_PASSWORD=
+#      - VNC_PASSWORD=
       - TWS_MAJOR_VRSN=978
       - IBC_INI=/home/docker/IBController/IBController.ini
       - IBC_PATH=/home/docker/IBController
@@ -22,13 +19,14 @@ services:
       - TWS_CONFIG_PATH=/home/docker/Jts
       - LOG_PATH=/home/docker/Logs
       - JAVA_PATH=/usr/local/i4j_jres/1.8.0_152-tzdata2019c/bin # JRE is bundled starting with TWS 952
-      - TRADING_MODE=paper # either paper or live
-      - TWSUSERID= # IB account
-      - TWSPASSWORD= # IB account password
-      - FIXUSERID=
-      - FIXPASSWORD=
+      - TRADING_MODE=${TRADING_MODE} # either paper or live
+      - RUNTIME=${RUNTIME}
+#      - TWSUSERID= # IB account
+#      - TWSPASSWORD= # IB account password
+#      - FIXUSERID=
+#      - FIXPASSWORD=
       - APP=GATEWAY
-      - SOCAT_LISTEN_PORT=4003
-      - SOCAT_DEST_PORT=4002 # paper = 4002, live 4003
-      - SOCAT_DEST_ADDR=127.0.0.1
+#      - SOCAT_LISTEN_PORT=4003
+#      - SOCAT_DEST_PORT=4002 # paper = 4002, live 4003
+#      - SOCAT_DEST_ADDR=127.0.0.1
 

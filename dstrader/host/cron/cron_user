@@ -11,10 +11,7 @@
 DOCKER_HOST=unix:///run/user/1000/docker.sock
 
 # runs after waking up
- 32  9  *  *  *  /etc/init.d/dstrader restart
- 32 10  *  *  *  /etc/init.d/dstrader restart
- 32 11  *  *  *  /etc/init.d/dstrader restart
- 32 12  *  *  *  /etc/init.d/dstrader restart
+ 32 11  *  *  *  /etc/init.d/dstrader restart stage
 
 # start and stop, note that tws is supposed to stop by itself by 13h (see ClosedownAt in jts.ini)
- 30 12  *  *  *  /etc/init.d/dstrader restart
+ 32 12  *  *  *  /etc/init.d/dstrader restart prod

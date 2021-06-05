@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+    <Appenders>
+        <Console name="CONSOLE">
+            <PatternLayout pattern="[%t] %d %-5p %-20c - %m%n"/>
+        </Console>
+        <RollingFile name="DSTRADER"
+                     fileName="logs/dstrader.log"
+                     filePattern="logs/dstrader-%d{yyyy-MM-dd}-%i.log">
+            <PatternLayout>
+                <Pattern>[%t] %d %-5p %-20c - %m%n</Pattern>
+            </PatternLayout>
+            <Policies>
+                <OnStartupTriggeringPolicy />
+            </Policies>
+            <DefaultRolloverStrategy max="7"/>
+        </RollingFile>
+        <RollingFile name="TWS"
+                     fileName="logs/tws.log"
+                     filePattern="logs/tws-%d{yyyy-MM-dd}-%i.log">
+            <PatternLayout>
+                <Pattern>[%t] %d %-5p - %m%n</Pattern>
+            </PatternLayout>
+            <Policies>
+                <OnStartupTriggeringPolicy />
+            </Policies>
+            <DefaultRolloverStrategy max="7"/>
+        </RollingFile>
+        <RollingFile name="RUNNER"
+                     fileName="logs/run_report.log"
+                     filePattern="logs/run_report-%d{yyyy-MM-dd}-%i.log">
+            <PatternLayout>
+                <Pattern>[%t] %d %-5p - %m%n</Pattern>
+            </PatternLayout>
+            <Policies>
+                <OnStartupTriggeringPolicy />
+            </Policies>
+            <DefaultRolloverStrategy max="7"/>
+        </RollingFile>
+    </Appenders>
+    <Loggers>
+        <Logger name="SimpleWrapper" level="TRACE">
+            <Appender-ref ref="TWS"/>
+        </Logger>
+        <Logger name="RunReport" level="DEBUG">
+            <Appender-ref ref="RUNNER"/>
+        </Logger>
+        <Root level="DEBUG">
+            <Appender-ref ref="CONSOLE"/>
+            <Appender-ref ref="DSTRADER"/>
+        </Root>
+    </Loggers>
+</Configuration>

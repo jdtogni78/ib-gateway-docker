@@ -1,4 +1,2 @@
-logs
-out
-mail.properties
+../prod/mail.properties
 DSTrader.jar

@@ -1,0 +1,23 @@
+{
+  "stocks" : [
+    {"symbol": "SPXL",  "type": "STK", "targetShare": 0.20, "deviationTrigger": 0.04},
+    {"symbol": "SOXL",  "type": "STK", "targetShare": 0.10, "deviationTrigger": 0.02},
+    {"symbol": "TECL",  "type": "STK", "targetShare": 0.10, "deviationTrigger": 0.02},
+
+    {"symbol": "IAU",   "type": "STK", "targetShare": 0.10, "deviationTrigger": 0.02},
+
+    {"symbol": "GBTC",  "type": "STK", "targetShare": 0.04, "deviationTrigger": 0.008},
+    {"symbol": "ETHE",  "type": "STK", "targetShare": 0.03, "deviationTrigger": 0.006},
+    {"symbol": "LTCN",  "type": "STK", "targetShare": 0.02, "deviationTrigger": 0.004},
+    {"symbol": "BCHG",  "type": "STK", "targetShare": 0.01, "deviationTrigger": 0.002},
+
+    {"symbol": "FTBFX", "type": "FUND",  "targetShare": 0.15, "deviationTrigger": 0.03},
+    {"symbol": "FIPDX", "type": "FUND",  "targetShare": 0.10, "deviationTrigger": 0.02}
+  ],
+  "cashTarget":  0.15,
+  "cashReserveTarget": 0.05,
+  "maxSingleOrder": 0.20,
+  "runState": {
+    "rebalancePeriod": 90
+  }
+}
