@@ -21,7 +21,7 @@ case "$1" in
     $0 start
     ;;
   *)
-  echo "Usage: /etc/init.d/xvfb {start|stop|restart}"
+  echo "Usage: /etc/init.d/vnc_init {start|stop|restart}"
   exit 1
 esac
 exit 0

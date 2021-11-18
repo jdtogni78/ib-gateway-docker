@@ -55,6 +55,9 @@ echo $DIR2
 echo NOTE: Always try encrypting first to hide clear text file
 
 case "$1" in
+  setup)
+    gpg --full-generate-key
+    ;;
   decrypt)
     cd "$DIR1" ; dstrader_encr mail.properties          ; dstrader_decr mail.properties
     cd "$DIR2" ; dstrader_encr IBController.ini.jdtogni ; dstrader_decr IBController.ini.jdtogni

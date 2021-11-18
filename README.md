@@ -75,3 +75,17 @@ Exception in thread "main" java.awt.AWTError: Can't connect to X11 window server
 ```
 
 You will have to remove the container `docker rm container_id` and run `docker-compose up` again.
+
+[DSTrader][prod] Daily Run - Failed - portfolios/portfolio.json - 2021-09-28 12:35:23
+[main] 2021-09-28 12:32:21,341 INFO  - isDueByDate nextUpdate=2021-09-28 processingDate=2021-09-28T12:32:21.034911612 IS DUE
+[main] 2021-09-28 12:32:21,371 INFO  - ### Plan Report Start
+[main] 2021-09-28 12:32:21,374 INFO  -  FTBFX SELL MKT 0.652 est price: $11.15 est total: $7.27
+[main] 2021-09-28 12:32:21,374 INFO  -  FIPDX SELL MKT 0.799 est price: $11.44 est total: $9.14
+[main] 2021-09-28 12:32:21,374 INFO  - ### Plan Report End
+[main] 2021-09-28 12:32:21,378 INFO  - Placing IB order 2 for FTBFX
+[main] 2021-09-28 12:32:21,382 INFO  - Placing IB order 3 for FIPDX
+[Thread-3] 2021-09-28 12:32:21,600 ERROR - Error id=2 code=10165 msg=Cash Quantity Order can not be used on this security. Please try with regular order.
+[Thread-3] 2021-09-28 12:32:21,613 ERROR - Error id=3 code=10165 msg=Cash Quantity Order can not be used on this security. Please try with regular order.
+[main] 2021-09-28 12:35:23,319 INFO  - Account U5843610 updated
+
+## api does not support fractions on cashqty

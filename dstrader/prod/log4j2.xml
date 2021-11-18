@@ -39,7 +39,7 @@
         </RollingFile>
     </Appenders>
     <Loggers>
-        <Logger name="SimpleWrapper" level="TRACE">
+        <Logger name="IBWrapper" level="TRACE">
             <Appender-ref ref="TWS"/>
         </Logger>
         <Logger name="RunReport" level="DEBUG">
