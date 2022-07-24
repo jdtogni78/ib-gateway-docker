@@ -6,8 +6,8 @@
 
     {"symbol": "IAU",   "type": "STK", "targetShare": 0.15, "deviationTrigger": 0.02},
 
-    {"symbol": "FTBFX", "type": "FUND",  "targetShare": 0.15, "deviationTrigger": 0.03},
-    {"symbol": "FIPDX", "type": "FUND",  "targetShare": 0.10, "deviationTrigger": 0.02}
+    {"symbol": "IUSB", "type": "STK",  "targetShare": 0.15, "deviationTrigger": 0.03},
+    {"symbol": "GTIP", "type": "STK",  "targetShare": 0.10, "deviationTrigger": 0.02}
   ],
   "cashTarget":  0.15,
   "cashReserveTarget": 0.05,
